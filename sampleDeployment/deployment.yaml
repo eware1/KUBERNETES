@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: Container1
+      app: App1
   replicas: 4 # tells deployment to run 4 pods matching the template
   template:
     metadata:
       labels:
-        app: Container1
+        app: App1
     spec:
       containers:
       - name: Container1
@@ -20,3 +20,7 @@ spec:
         resources:
           limits:
           requests: 
+      - name: Container2
+        image: nginx:latest
+        ports:
+        - containerPort: 80
